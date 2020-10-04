@@ -5,7 +5,7 @@ VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
   def blackjack_score(hand)
     total = 0
     hand.each do |card|
-      if !VALID_CARDS.any?(card)
+      unless VALID_CARDS.any?(card)
         raise ArgumentError
       end
       if card.is_a?(Integer)
@@ -18,7 +18,7 @@ VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
         total += 11
       else
         total += 1
-        end
+                                                                                                                                                                                   end
       end
     end
     if total > 21
