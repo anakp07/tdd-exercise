@@ -18,7 +18,7 @@ describe 'Blackjack Score' do
     expect(score).must_equal(7)
   end
 
-  it 'facecards have values calculated correctly' do
+  it ' will calculate the facecards values correctly' do
     #Arrange
     hand = ["Queen", "King"]
     #Act
@@ -29,21 +29,25 @@ describe 'Blackjack Score' do
 
   it 'calculates aces as 11 where it does not go over 21' do
     #Arrange
-    hand =
+    hand = ['Ace', 9]
 
     #Act
-    hand =
+    score = blackjack_score(hand)
 
     #Expect
-
+    expect(score).must_equal(20)
   end
 
   it 'calculates aces as 1, if an 11 would cause the score to go over 21' do
-
+    #Arrange
+    hand = [5, 'Ace', 'king']
+    #Act
+    score = blackjack_score(hand)
+    #Assert
+    expect(score).must_equal(16)
   end
 
   it 'raises an ArgumentError for invalid cards' do
-
   end
 
   it 'raises an ArgumentError for scores over 21' do
