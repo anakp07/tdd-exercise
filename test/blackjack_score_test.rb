@@ -40,6 +40,7 @@ describe 'Blackjack Score' do
 
   it 'calculates aces as 1, if an 11 would cause the score to go over 21' do
     #Arrange
+    print "start of the test is HERE"
     hand = ['Queen','King','Ace']
     #Act
     score = blackjack_score(hand)
